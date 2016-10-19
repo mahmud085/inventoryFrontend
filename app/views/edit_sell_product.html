@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="container">
+        <form class="form">
+            <h2 class="form-heading">Edit Sell Product</h2>
+
+            <div class="form-group">
+                <label for="sel1">Select Product:</label>
+                <select class="form-control" id="sel1" ng-model="sell.productId"
+                                    ng-change="getPrice(sell.productId)" 
+                                    ng-options="product.id as product.name for product in productList">
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" placeholder="Enter Product Quantity" 
+                                                 ng-change="getAmount(sell.quantity, sell.sell_price)"
+                                                 ng-model="sell.quantity" required autofocus>
+            </div>
+            
+            <div class="form-group">    
+                <label for="sell_price">Sell Price</label>
+                <input type="number" class="form-control" placeholder="Enter Product's Price'" 
+                                                 ng-model="sell.sell_price" disabled required autofocus>
+            </div>
+            
+            <div class="form-group">    
+                <label for="amount">Amount</label>
+                <input type="number" class="form-control" placeholder="Enter Product's Price" 
+                                                 ng-model="sell.amount" disabled required autofocus>
+            </div>
+            
+        </form>
+    </div>
+    <button class="btn btn-primary " type="submit" ng-click="editSell(sell)">
+        Save 
+    </button>
+    <button class="btn btn-danger " type="submit" ng-click="cancel()">
+        Cancel 
+    </button>
+</div>

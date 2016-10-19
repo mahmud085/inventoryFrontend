@@ -1,0 +1,34 @@
+
+<div class="col-sm-6 col-md-10 container">
+    
+    <div class="panel panel-default">
+      <div class="panel-heading" id="hdrClr">
+      Enter New Customer
+      </div>
+      <div class="panel-body" style="height:380px">
+        <form class="form-signin">
+          
+          <label for="name" class="sr-only">Name</label>
+          <input class="form-control" placeholder="Enter Name" ng-model="row.name" required autofocus>
+          
+          <label for="name" class="sr-only">Address</label>
+          <input class="form-control" placeholder="Enter Address" ng-model="row.address" required autofocus>
+           
+          <label for="skunum" class="sr-only">Phone Number</label>
+          <input class="form-control" placeholder="Enter Phone Number" ng-model="row.phone" required autofocus>
+          
+          
+          <a href="#/customers" class="btn btn-primary " 
+                       type="submit" 
+                       ng-click="add(row)" >
+              ADD
+          </a>
+        </form>
+      </div>
+     
+</div>
+
+      
+
+</div>
+

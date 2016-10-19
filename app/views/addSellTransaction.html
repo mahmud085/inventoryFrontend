@@ -1,0 +1,56 @@
+<div class="container" id="modalContainer">
+    <div class="panel panel-default" id="modalPanel">
+        <div class="panel-heading" id="hdrClr">
+          Add New  Buy Transaction
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal form-inline" role="form">
+                
+                <div class="row">
+                    <label for="sel2" class="col-sm-4">Select Customer:</label>
+                    <select class="form-control col-sm-8" style="width: 50%;" id="sel1" 
+                                        ng-model="sellTransaction.customerId" 
+                                        ng-options="customer.id as customer.name for customer in customerList">
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Date:</label>
+                    <datepicker class="col-sm-8" style="padding : 0px;" date-format="yyyy-MM-dd">
+                          <input class="form-control" style="width : 75%" ng-model="sellTransaction.date" type="text" required/>
+                    </datepicker>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Total:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="sellTransaction.total"></input>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Paid:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="sellTransaction.cash_in"></input>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Due:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="sellTransaction.due">
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Payment Via:</label>
+                    <select class="form-control col-sm-8" id="sel1" style="width: 50%;" ng-model="sellTransaction.payment_method" ng-change="checkAccount()">
+                    <option>Cash</option>
+                    <option>Bank</option>
+                    </select>
+                </div>
+                <div class="row" ng-show="showText">
+                    <label class="col-sm-4">Bank Name:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="sellTransaction.bankName">
+                </div>
+                <div class="row" ng-show="showText">
+                    <label class="col-sm-4">Check No:</label>
+                    <input type="number" class="form-control col-sm-8" style="width: 50%;" ng-model="sellTransaction.checkNo">
+                </div>
+                <div>
+                <button class="btn btn-success" ng-click="saveTransaction(sellTransaction)">Save</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

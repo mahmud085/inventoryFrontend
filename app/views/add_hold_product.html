@@ -1,0 +1,109 @@
+ <div class="col-sm-6 col-md-6 container">
+
+        <div class="container">
+            <form class="form">
+                <h2 class="form-heading">Enter New Hold Product</h2>
+
+                 <div class="form-group">
+                    <label for="sel1">Select Sales Agent:</label>
+                    <a href="#/addsaleagent">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                    <select class="form-control" id="sel1" ng-model="hold.salesagentId" 
+                                    ng-options="salesagent.id as salesagent.name for salesagent in salesagentList">
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sel1">Select Product:</label>
+                    <a href="#/addProduct">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                    <select class="form-control" id="sel1" ng-model="hold.productId"
+                                    ng-change="getQuantity(hold.location,hold.productId)" 
+                                    ng-options="product.id as product.name for product in productList">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select class="form-control" id="location" ng-model="hold.location" 
+                                    ng-change="getQuantity(hold.location,hold.productId)">
+                        <option>Shop</option>
+                        <option>Godown</option>
+                    </select>
+                </div>
+                
+                <!---************
+                <div class="form-group">
+                    <label for="sel2">Select Supplier:</label>
+                    <a href="#/addSupplier">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                    <select class="form-control" id="sel1" ng-model="buy.supplierId" 
+                                    ng-options="supplier.id as supplier.name for supplier in supplierList">
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select class="form-control" id="sel1" ng-model="buy.location">
+                        <option>Shop</option>
+                        <option>Godown </option>
+                    </select>
+                </div>
+                *******************---->    
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" class="form-control" placeholder="Enter Product's Quantity" 
+                                    ng-change="getAmount(hold.aval_quant,hold.quantity)" min="0"
+                                    ng-model="hold.quantity" required autofocus>
+                </div>
+                
+                <div class="form-group">
+                    <label for="buy_price">Sell Price</label>
+                    <input type="number" class="form-control" placeholder="Product's Buy Price " 
+                                    ng-model="hold.sell_price" disabled required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount(tk)</label>
+                    <input type="number" class="form-control" placeholder="Amount(tk)" 
+                                    ng-model="hold.amount" disabled required autofocus>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="available_quantity">Available Quantity</label>
+                    <input type="number" class="form-control" placeholder="Available Quantity" ng-model="hold.aval_quant" required autofocus disabled>
+                </div>
+
+            </form>
+        </div>
+                <div class="alert alert-danger" ng-show="invalid">
+                    <strong>Not enough products in {{hold.location}}!</strong>
+                </div>
+        <button class="btn btn-primary" type="submit" ng-click="addhold(hold)" ng-show="finish">
+            <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
+        </button>
+        <button class="btn btn-primary" type="submit" ng-click="show()" ng-show="finish">
+            Finish
+        </button>
+    </div>
+ 
+<div class="col-sm-6 col-md-5 container">
+        <div id="grid1" ui-grid="myHoldCartList" ui-grid-cellNav ui-grid-resize-columns class="myGrid2">
+        </div>
+        <div ng-show="view">
+            <div class="container holdClass">
+                <form class="form" id="form2">
+                    
+                    <div class="form-group">
+                        <label>Total: </label>
+                        <span>{{obj.total}} tk</span>
+                    </div>
+                </form>
+                <button class="btn btn-danger btn-sm" ng-click="confirm(obj)" >Confirm</button>
+            </div>
+        </div>
+    </div>

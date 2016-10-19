@@ -1,0 +1,33 @@
+<div class="container" style="padding-right:15px">
+    <div class="panel panel-default" style="width:100%;margin:15px 0px 0 0">
+        <div class="panel-heading" id="hdrClr">
+          Move Product
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal form-inline" role="form">
+                <div class="row">
+                    <label class="col-sm-4">Product Name:</label>
+                    <select class="form-control col-sm-8" id="sel1" style="width: 50%;" ng-model="move.productId" 
+                                    ng-change="getQuantity(move.productId)"
+                                    ng-options="inventory.productId as inventory.products.name for inventory in inventoryList">
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Available Quantity:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" placeholder="{{move.available_quantity}}" disabled></input>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Quantity:</label>
+                    <input type="number" class="form-control col-sm-8" style="width: 50%;" ng-model="move.quantity" ng-change="calculate(move.available_quantity,move.quantity)">
+                </div>
+                <div class="alert alert-danger" ng-show="invalid">
+                    <strong>Not enough products to move!</strong>
+                </div>
+                <div>
+                <button class="btn btn-success" ng-click="moveToShop(move)">Move to Shop</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

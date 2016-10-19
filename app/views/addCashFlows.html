@@ -1,0 +1,49 @@
+<div class="container" id="modalContainer">
+    <div class="panel panel-default" id="modalPanel">
+        <div class="panel-heading" id="hdrClr">
+          Add Cash Flow Satement
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal form-inline" role="form">
+                
+                <div class="row">
+                    <label class="col-sm-4">Date:</label>
+                    <datepicker class="col-sm-8" style="padding : 0px;" date-format="yyyy-MM-dd">
+                          <input class="form-control" style="width : 75%" ng-model="cashFlows.date" type="text" required/>
+                    </datepicker>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Cash In Amount:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="cashFlows.cash_in"></input>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Cash Out Amount:</label>
+                    <input type="number" class="form-control col-sm-8" style="width: 50%;" ng-model="cashFlows.cash_out">
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Payment Via:</label>
+                    <select class="form-control col-sm-8" id="sel1" style="width: 50%;" ng-model="cashFlows.payment_method" ng-change="checkAccount()">
+                    <option>Cash</option>
+                    <option>Bank</option>
+                    </select>
+                </div>
+                <div class="row" ng-show="showText">
+                    <label class="col-sm-4">Bank Name:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="cashFlows.bankName">
+                </div>
+                <div class="row" ng-show="showText">
+                    <label class="col-sm-4">Check No:</label>
+                    <input type="number" class="form-control col-sm-8" style="width: 50%;" ng-model="cashFlows.checkNo">
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Description :</label>
+                    <textarea class="form-control col-sm-8" style="width: 50%;" placeholder="Description" ng-model="cashFlows.description"></textarea>
+                </div>
+                <div>
+                <button class="btn btn-success" ng-click="saveCashFlows(cashFlows)">Save</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

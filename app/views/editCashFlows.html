@@ -1,0 +1,42 @@
+<div class="container">
+            <form class="form-horizontal form-inline" role="form">
+                
+                <div class="row">
+                    <label class="col-sm-4">Date:</label>
+                    <datepicker class="col-sm-8" style="padding : 0px;" date-format="yyyy-MM-dd">
+                          <input class="form-control" style="width : 75%" ng-model="editcashFlows.date" type="text"/>
+                    </datepicker>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Cash In Amount:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="editcashFlows.cash_in"></input>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Cash Out Amount:</label>
+                    <input type="number" class="form-control col-sm-8" style="width: 50%;" ng-model="editcashFlows.cash_out">
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Payment Via:</label>
+                    <select class="form-control col-sm-8" id="sel1" style="width: 50%;" ng-model="editcashFlows.payment_method" ng-change="checkAccount()">
+                    <option>Cash</option>
+                    <option>Bank</option>
+                    </select>
+                </div>
+                <div class="row" ng-show="showText">
+                    <label class="col-sm-4">Bank Name:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="editcashFlows.bankName">
+                </div>
+                <div class="row" ng-show="showText">
+                    <label class="col-sm-4">Check No:</label>
+                    <input type="number" class="form-control col-sm-8" style="width: 50%;" ng-model="editcashFlows.checkNo">
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Description :</label>
+                    <textarea class="form-control col-sm-8" style="width: 50%;" placeholder="Description" ng-model="editcashFlows.description" autofocus></textarea>
+                </div>
+                <div>
+                <button class="btn btn-success" ng-click="saveeditcashFlows(editcashFlows)">Save</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                </div>
+            </form>
+</div>

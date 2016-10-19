@@ -1,0 +1,36 @@
+<div class="col-sm-6 col-md-10 container">
+    <div class="panel panel-default">
+        <div class="panel-heading" id="hdrClr">
+          Enter Product Conversion
+        </div>
+        <div class="panel-body" style="height:280px">
+            <form class="form">
+                <div class="form-group">
+                    <label for="sel1">Select Category:</label>
+                    <select class="form-control" id="sel1" ng-model="conversion.categoryId" ng-change="getProduct(conversion.categoryId)" ng-options="category.id as category.name for category in categoryList">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sel2">Select Start Product:</label>
+                    <select class="form-control" id="sel1" ng-model="conversion.start_productId" ng-options="product.id as product.name for product in productList">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sel3">Select End Product:</label>
+                    <select class="form-control" id="sel3" ng-model="conversion.end_productId" ng-options="product.id as product.name for product in productList">
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="factor">Factor</label>
+                    <input type="number" class="form-control" placeholder="Enter Factor" ng-model="conversion.factor" required autofocus>
+                </div>
+
+            </form>
+                    <a href="#/conversion" class="btn btn-primary pull-right" type="submit" ng-click="add(conversion)">
+            ADD
+        </a>
+        </div>
+
+    </div>
+</div>

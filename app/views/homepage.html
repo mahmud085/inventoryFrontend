@@ -1,0 +1,76 @@
+<div class="login" ng-show="show1">
+<h3>Please Sign In!</h3>
+  <form class="form-horizontal form-signin" role="form">
+  <div class="row">
+    <label class="col-sm-3" for="email">Email:</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="signin.email">
+    </div>
+  </div>
+  <div class="row">
+    <label class="col-sm-3" for="pwd">Password:</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="signin.password"> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" class="btn btn-default" ng-click="signinuser(signin)">Sign In</button>
+    </div>
+  </div>
+    </br>
+  <p>Don't have an account? Click here to Sign Up <a href="" ng-click="showOrHide2()">Sign Up</a></p>
+</form>
+<div class="alert alert-danger" ng-show="error">
+  <strong>Invalid Email or Password!</strong>
+</div>
+</div>
+<div class="signup" ng-show="show">
+      <h3>Please Sign Up!</h3>
+      <form class="form-horizontal form-signin" role="form">
+          <div class="row">
+            <label class="col-sm-3" for="username">Company Name:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="username" placeholder="Enter Your Company Name" ng-model="signup.username">
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-3" for="email">Email:</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="signup.email">
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-3" for="pwd">Password:</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="pwd" ng-model="signup.password" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-3" for="pwd">Confirm Password:</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="conpwd" ng-model="signup.conpass" placeholder="Confirm password">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-offset-3 col-sm-9">
+              <div class="checkbox">
+                <label><input type="checkbox" ng-model="signup.checkbox"> Remember me</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" ng-click="signupuser(signup)" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+          </br>
+          <p>Already have an account? Click here to Sign In <a href="" ng-click="showOrHide()">Sign In</a></p>
+</form>
+    <div class="alert alert-success" ng-show="success">
+      <strong>Successfully added user!</strong> 
+    </div>
+    <div class="alert alert-danger" ng-show="error">
+      <strong>{{errmsg}}</strong> 
+    </div>  
+</div>

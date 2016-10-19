@@ -1,0 +1,29 @@
+<div class="container" id="modalContainer">
+    <div class="panel panel-default" id="modalPanel">
+        <div class="panel-heading" id="hdrClr">
+          Edit Customer
+        </div>
+        <div class="panel-body">
+          <form class="form-signin">
+            <label for="name" class="sr-only">Name</label>
+            <input class="form-control" placeholder="Enter Name" ng-model="customer.name" required autofocus>
+            
+            <label for="name" class="sr-only">Address</label>
+            <input class="form-control" placeholder="Enter Address" ng-model="customer.address" required autofocus>
+             
+            <label for="skunum" class="sr-only">Phone Number</label>
+            <input class="form-control" placeholder="Enter Phone Number" ng-model="customer.phone" required autofocus>
+            
+            
+            <a href="#/customers" class="btn btn-primary " 
+                         type="submit" 
+                         ng-click="editCustomer(customer)" >
+                Save
+            </a>
+            <button class="btn btn-danger" type="submit" ng-click="cancel()">
+                    Cancel
+            </button>
+          </form>
+        </div>
+    </div>
+</div>  

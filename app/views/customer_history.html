@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="panel panel-default" id="historyGrid">
+        <div class="panel-heading" id="hdrClr">
+            {{customerName}}'s Sell History
+        </div>
+        <div class="panel-body">            
+            <table class="table table-condensed">
+                <tr>
+                    <td>Total Amount:</td>
+                    <td>{{totalAmount}}</td>
+                </tr>
+                <tr>
+                    <td>Total Paid:</td>
+                    <td>{{totalPaid}}</td>
+                </tr>
+                <tr>
+                    <td>Total Due:</td>
+                    <td>{{totalDue}}</td>
+                </tr>        
+            </table>
+        </div>
+    </div> 
+</div>    
+<div class="container">
+    <div class="panel panel-default" id="historyGrid">
+        <div class="panel-body">
+            <div ui-grid="myCustomersHistory" ui-grid-edit ui-grid-row-edit ui-grid-cellNav class="myGrid2"></div>
+            <button class="btn" ng-click="cancel()">Ok</button>
+        </div>
+    </div>
+</div>    

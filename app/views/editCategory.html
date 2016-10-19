@@ -1,0 +1,19 @@
+<div class="container" id="modalContainer">
+    <div class="panel panel-default" id="modalPanel">
+        <div class="panel-heading" id="hdrClr">
+          Edit Category
+        </div>
+        <div class="panel-body">
+            <form class="form">
+                <label for="inputcatagory" class="sr-only">Enter Category</label>
+                <input class="form-control" placeholder="Category name (ex: Oil, Glass etc)" ng-model="category.name" required autofocus>
+                <button class="btn btn-primary btn-sm" type="submit" ng-click="editCategory(category)">
+                    Save
+                </button>
+                <button class="btn btn-danger btn-sm" type="submit" ng-click="cancel()">
+                    Cancel
+                </button>
+            </form>
+        </div>
+    </div>
+</div> 

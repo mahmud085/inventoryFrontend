@@ -1,0 +1,55 @@
+<div class="container" id="modalContainer">
+    <div class="panel panel-default" id="modalPanel">
+        <div class="panel-heading" id="hdrClr">
+          Edit Order
+        </div>
+        <div class="panel-body">
+            <form class="form">
+                <div class="form-group">
+                    <label for="sel1">Select Product:</label>
+                    <select class="form-control" id="sel1" ng-model="order.productId" 
+                                    ng-options="product.id as product.name for product in productList" >
+                    </select>
+                </div>
+            
+                
+                <div class="form-group">
+                    <label for="quantity" >Quantity</label>
+                    <input type="number" class="form-control" placeholder="quantity" ng-model="order.quantity" required autofocus>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sel2">Select Customer:</label>
+                    <select class="form-control" id="sel1" 
+                                        ng-model="order.customerId" 
+                                        ng-options="customer.id as customer.name for customer in customerList">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <datepicker date-format="yyyy-MM-dd">
+                      <input class="form-control" ng-model="order.date" type="text"/>
+                    </datepicker>
+                </div> 
+                <div class="form-group">
+                    <label for="status" >Status</label>
+                    <select class="form-control" id="status" ng-model="order.status">
+                        <option>Pending</option>
+                        <option>Received</option>
+                        <option>Completed</option>
+                    </select>
+                </div>                 
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input id="prodTA" class="form-control"  ng-model="order.description" required autofocus>
+                </div>
+            </form>
+        </div>
+        <button class="btn btn-primary " type="submit" ng-click="editOrder(order)">
+                Save
+        </button>
+        <button class="btn btn-danger" type="submit" ng-click="cancel()">
+                    Cancel
+        </button>
+    </div>
+</div>

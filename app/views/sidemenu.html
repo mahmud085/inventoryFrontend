@@ -1,0 +1,38 @@
+<div class="container menu" >
+    <ul class="list-group">
+        <a href="" class="list-group-item grp" ng-click="productfn()" style="color:#d1e0e0">Product<span class="glyphicon glyphicon-chevron-down pull-right">
+      </span></a>
+        <a href="#/products" class="list-group-item" ng-class="{ active: isActive('/products') || isActive('/addProduct') }" ng-show="product">Products</a>
+        
+        <a href="#/category" class="list-group-item" ng-class="{ active: isActive('/category') || isActive('/categoryinput') }" ng-show="product">Category</a>
+        
+        <a href="#/buy" class="list-group-item" ng-class="{ active: isActive('/buy') || isActive('/add_buy_product')  }" ng-show="product">Buy</a>
+        
+        <a href="#/sell" class="list-group-item" ng-class="{ active: isActive('/sell') || isActive('/add_sell_product')  }" ng-show="product">Sell</a>
+        
+        <a href="#/conversion" class="list-group-item" ng-class="{ active: isActive('/conversion') || isActive('/addConversion')  }" ng-show="product">Conversion</a>
+        <a href="" class="list-group-item grp" ng-click="usersfn()" style="color:#d1e0e0">Peoples<span class="glyphicon glyphicon-chevron-down pull-right">
+      </span></a>
+        <a href="#/suppliers" class="list-group-item" ng-class="{ active: isActive('/suppliers') || isActive('/addSupplier')  }" ng-show="users" >Suppliers</a>
+        
+        <a href="#/customers" class="list-group-item" ng-class="{ active: isActive('/customers') || isActive('/addcustomer')  }" ng-show="users">Customers</a>
+        
+        <a href="#/salesAgent" class="list-group-item" ng-class="{ active: isActive('/salesAgent') || isActive('/addsaleagent')  }" ng-show="users">Sales Agent</a>
+
+        <a href="" class="list-group-item grp" ng-click="inventoryfn()" style="color:#d1e0e0">Inventory<span class="glyphicon glyphicon-chevron-down pull-right">
+      </span></a>
+        <a href="#/inventory" class="list-group-item" ng-class="{ active: isActive('/inventory') }" ng-show="inventory">Inventory</a>
+        
+        <a href="#/inventory_hold" class="list-group-item" ng-class="{ active: isActive('/inventory_hold') || isActive('/add_hold_product')  }" ng-show="inventory">Inventory Hold</a>
+        <a href="" class="list-group-item grp" ng-click="transactionfn()" style="color:#d1e0e0">Transaction<span class="glyphicon glyphicon-chevron-down pull-right">
+      </span></a>
+        <a href="#/transaction_buy" class="list-group-item" ng-class="{ active: isActive('/transaction_buy') }" ng-show="transaction">Buy Transaction</a>
+        
+        <a href="#/transaction_sell" class="list-group-item" ng-class="{ active: isActive('/transaction_sell') }" ng-show="transaction">Sell Transaction</a>
+
+        <a href="#/cash_flow" class="list-group-item" ng-class="{ active: isActive('/cash_flow') }" ng-show="transaction">Cash Flow Statement</a>
+        <a href="#/export" class="list-group-item grp" ng-class="{ active: isActive('/export') }" style="color:#d1e0e0">Export Data</a>
+        <a href="#/order" class="list-group-item grp" ng-class="{ active: isActive('/order') || isActive('/addorder')  }" style="color:#d1e0e0">Order</a>
+        <a href="" class="list-group-item grp" ng-class="{ active: isActive('/#') }" style="color:#d1e0e0">User</a>
+        </ul>
+</div>

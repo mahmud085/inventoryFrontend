@@ -1,0 +1,123 @@
+
+    <div class="col-sm-6 col-md-6 container">
+
+        <div class="container">
+            <form class="form">
+                <h2 class="form-heading">Enter New Buy</h2>
+
+                <div class="form-group">
+                    <label for="sel2">Select Supplier:</label>
+                    <a href="#/addSupplier">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                    <select class="form-control" id="sel1" ng-model="buy.supplierId" 
+                                    ng-change="getProducts(buy.supplierId)"
+                                    ng-options="supplier.id as supplier.name for supplier in supplierList">
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sel1">Select Product:</label>
+                    <a href="#/addProduct">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                    <select class="form-control" id="sel1" ng-model="buy.productId" 
+                                    ng-change="getPrice(buy.productId)"
+                                    ng-options="product.id as product.name for product in productList">
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <select class="form-control" id="sel1" ng-model="buy.location">
+                        <option>Shop</option>
+                        <option>Godown</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" class="form-control" placeholder="Enter Product's Quantity" 
+                                    ng-change="getAmount(buy.quantity, buy.buy_price)"
+                                    ng-model="buy.quantity" required autofocus>
+                </div>
+                
+                <div class="form-group">
+                    <label for="buy_price">Buy Price</label>
+                    <input type="number" class="form-control" placeholder="Product's Buy Price " 
+                                    ng-model="buy.buy_price" disabled required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount(tk)</label>
+                    <input type="number" class="form-control" placeholder="Amount(tk)" 
+                                    ng-model="buy.amount" disabled required autofocus>
+                </div>
+                
+            </form>
+        </div>
+        <button class="btn btn-primary" type="submit" ng-click="addCart(buy)" ng-hide="finish">
+            <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
+        </button>
+        <button class="btn btn-primary" type="submit" ng-click="show()" ng-hide="finish">
+            Finish
+        </button>
+    </div>
+ 
+<div class="col-sm-6 col-md-5 container">
+        <div id="grid1" ui-grid="myBuyCartList" ui-grid-cellNav ui-grid-resize-columns class="myGrid2">
+        </div>
+        <div ng-show="view">
+            <div class="container">
+                <form class="form-horizontal form-inline"  role="form" id="form2">
+                    <h4 class="form-heading">Invoice</h4>
+                    
+                    <div class="row">
+                        <label class="col-sm-4">Total: </label>
+                        <span class="col-sm-6">{{transaction_buy.sum}}</span>
+                    </div>
+                    
+                    <div class="row">
+                        <label class="col-sm-4">Discount: </label>
+                        <input class="col-sm-6" type="number" placeholder="Enter Discount(tk)" 
+                        ng-model="transaction_buy.discount" ng-change="getDiscountedTotal(transaction_buy.discount, transaction_buy.sum)"> 
+                    </div>
+                    
+                    <div class="row">
+                        <label class="col-sm-4">Total After Discount: </label>
+                        <span class="col-sm-6">{{transaction_buy.total}}</span>
+                    </div>
+                    
+                    <div class="row">
+                        <label class="col-sm-4">Paid: </label>
+                        <input class="col-sm-6" type="number" placeholder="Enter Pay Amount(tk)" ng-model="transaction_buy.cash_out">
+                    </div>
+                    
+                    <div class="row">
+                        <label class="col-sm-4">Due: </label>
+                        <span class="col-sm-6">{{transaction_buy.total - transaction_buy.cash_out}}</span>
+                    </div>
+                    
+                   <div class="row">
+                        <label class="col-sm-4">Payment Via: </label>
+                        <select class="col-sm-6" ng-change="checkAccount()" ng-model="transaction_buy.payment_method">
+                            <option>Cash</option>
+                            <option>Bank</option>
+                        </select>
+                   </div>
+                    <div class="row" ng-show="showText">
+                        <label class="col-sm-4">Bank Name: </label>
+                        <input type="text" ng-model="transaction_buy.bankName">
+                    </div>
+                   <div class="row" ng-show="showText">
+                        <label class="col-sm-4">Bank Check No: </label>
+                        <input type="text" ng-model="transaction_buy.checkNo">
+                   </div>
+                   <div class="row"> 
+                    <button class="btn btn-danger btn-sm col-sm-offset-8" ng-click="confirmBuy(transaction_buy)" >Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+

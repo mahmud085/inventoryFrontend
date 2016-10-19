@@ -1,0 +1,12 @@
+<div class="col-md-10 col-sm-4 container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Product Conversion List</div>
+        <div class="prodList panel-body">
+            <p>
+                <a href="#/addConversion" id="addUnit" class="btn btn-success">Add Product Conversion</a>
+                <button class="btn btn-success" ng-click="move()">Convert Product</button>
+            </p>
+            <div ui-grid="myConversion" ui-grid-edit ui-grid-row-edit ui-grid-cellNav class="myGrid"></div>
+        </div>
+    </div>
+</div>

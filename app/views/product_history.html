@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="panel panel-default" id="prodhstry">
+        <div class="panel-heading" id="hdrClr" style="text-align:center">
+        {{row.name}}
+        </div>
+        <div class="panel-body">  
+            <table class="table table-bordered" style="background-color:#ECFBF5">
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+            	<tbody>
+            		<tr>
+            			<td>In Godown</td>
+            			<td>{{row.godown}}</td>
+            		</tr>
+            		<tr>
+            			<td>In Shop</td>
+            			<td>{{row.shop}}</td>
+            		</tr>
+            		<tr>
+            			<td>In Sales Agent</td>
+            			<td>{{row.sa}}</td>
+            		</tr>
+            	</tbody>
+            </table>
+            <button class="btn" ng-click="cancel()" >Cancel</button>
+        </div>
+    </div>
+</div>

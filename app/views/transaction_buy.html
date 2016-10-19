@@ -1,0 +1,21 @@
+<div class="col-md-10 col-sm-4 container">
+    <div class="panel panel-default">
+        <div class="panel-heading"> Buy Transaction List</div>
+        <div class="prodList panel-body">
+                <p>
+                    <a id="addBuyTransaction" class="btn btn-success" ng-click="addBuyTransaction()">Add Existing Buy Transaction</a>
+                </p>
+                <div class="row" style="padding : 0px;margin:10px;">
+                    <label class="col-sm-2">Filter From :</label>
+                    <datepicker class="col-sm-3" style="padding : 0px;" date-format="yyyy-MM-dd">
+                    <input ng-model="transaction_buy.date1" type="text" placeholder="1970-01-30" ng-change="filterByDate()" required/>
+                    </datepicker>
+                    <label class="col-sm-1">To</label>
+                    <datepicker class="col-sm-3" style="padding : 0px;" date-format="yyyy-MM-dd">
+                    <input ng-model="transaction_buy.date2" type="text" placeholder="1970-01-30" ng-change="filterByDate()" required/>
+                    </datepicker>
+                </div>
+            <div ui-grid="myBuyTransaction" ui-grid-resize-columns ui-grid-edit ui-grid-row-edit ui-grid-cellNav class="myGrid"></div>
+        </div>
+    </div>
+</div>

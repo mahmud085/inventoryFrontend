@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="container">
+        <form class="form">
+            <h2 class="form-heading">Edit Sell Product</h2>
+
+            <div class="form-group">
+                <label for="sel2">Select Sales Agent:</label>
+                <select class="form-control" id="sel1" ng-model="hold.salesagentId"
+                                    ng-options="salesagent.id as salesagent.name for salesagent in salesagentList">
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="sel1">Select Product:</label>
+                <select class="form-control" id="sel1" ng-model="hold.productId"
+                                    ng-options="product.id as product.name for product in productList">
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" placeholder="Enter Product Quantity" 
+                                                 ng-change="getAmount(hold.quantity)"
+                                                 ng-model="hold.quantity" required autofocus>
+            </div>
+            
+            <div class="form-group">    
+                <label for="sell_price">Sell Price</label>
+                <input type="number" class="form-control" placeholder="Enter Product's Price'" 
+                                                 ng-model="hold.sell_price" disabled required autofocus>
+            </div>
+            
+            <div class="form-group">    
+                <label for="amount">Amount(tk) </label>
+                <input type="number" class="form-control" placeholder="Enter Product's Price" 
+                                                 ng-model="hold.amount" disabled required autofocus>
+            </div>
+            
+        </form>
+    </div>
+    <button class="btn btn-primary " type="submit" ng-click="editHold(hold)">
+        Save 
+    </button>
+    <button class="btn btn-danger " type="submit" ng-click="cancel()">
+        Cancel 
+    </button>
+</div>

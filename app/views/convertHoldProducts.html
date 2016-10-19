@@ -1,0 +1,55 @@
+<div class="container" id="modalContainer">
+    <div class="panel panel-default" id="modalPanel">
+        <div class="panel-heading" id="hdrClr">
+          Convert Hold Products
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal form-inline" role="form">
+                <div class="row">
+                    <label class="col-sm-4">Select Sales Agent:</label>
+                    <select class="form-control col-sm-8" style="width: 50%;" ng-model="convert.salesagentId" ng-options="salesagent.id as salesagent.name for salesagent in salesagentList" required>
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Date:</label>
+                    <datepicker class="col-sm-8" style="padding : 0px;" date-format="yyyy-MM-dd">
+                          <input class="form-control" style="width : 75%" ng-model="convert.date" ng-change="getHoldProducts();getQuantity(convert.start_productId,convert.date)" type="text" required/>
+                    </datepicker>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Select Product:</label>
+                    <select class="form-control col-sm-8" id="sel1" style="width: 50%;" ng-model="convert.start_productId" ng-change="getEndProducts(convert.start_productId);getQuantity(convert.start_productId,convert.date)" ng-options="products.productId as products.product.name for products in holdproductsList" required>
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Convert To:</label>
+                    <select class="form-control col-sm-8" id="sel1" style="width: 50%;" ng-model="convert.end_productId" 
+                                    ng-change="getFactor(convert.start_productId,convert.end_productId)"
+                                    ng-options="conversion.end_productId as conversion.end_product.name for conversion in endProductsList">
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Available Quantity:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="convert.available_quantity" disabled></input>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Quantity:</label>
+                    <input type="number" class="form-control col-sm-8" style="width: 50%;" ng-model="convert.quantity" ng-change="calculate(convert.available_quantity,convert.quantity)">
+                </div>
+                <div class="alert alert-danger" ng-show="invalid">
+                    <strong>Not enough products to convert!</strong>
+                </div>
+                <div class="row">
+                    <label class="col-sm-4">Total no of products converted:</label>
+                    <input type="text" class="form-control col-sm-8" style="width: 50%;" ng-model="convert.total"  disabled></input>
+                </div>
+
+                <div>
+                <button class="btn btn-success" ng-click="convertProduct(convert)">Convert</button>
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+                <button class="btn btn-danger" ng-click="getDefault()">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="col-md-10 col-sm-4 container">
+    <div class="panel panel-default">
+        <div class="panel-heading">Sold Products List</div>
+        <div class="prodList panel-body">
+            <div class="row" style="padding : 0px;margin:10px;">
+
+                <a href="#/add_sell_product" id="addData" class="btn btn-md btn-success col-sm-3">Add Sold Products</a>
+                <label class="col-sm-1">Filter From</label>
+            	<datepicker class="col-sm-3" style="padding : 0px;margin-left:15px;" date-format="yyyy-MM-dd">
+                    <input ng-model="sell.date1" type="text" placeholder="1970-01-30" ng-change="filterByDate()" required/>
+                </datepicker>
+                <label class="col-sm-1">To</label>
+                <datepicker class="col-sm-3" style="padding : 0px;" date-format="yyyy-MM-dd">
+                    <input ng-model="sell.date2" type="text" placeholder="1970-01-30" ng-change="filterByDate()" required/>
+                </datepicker>
+	        </div>
+
+            <div id="grid1" ui-grid="mySellProducts" ui-grid-edit ui-grid-row-edit ui-grid-cellNav class="myGrid"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,255 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+.login{
+  margin-right : 300px;
+  padding: 30px;
+  background-color: #d1d1e0;  
+}
+.signup{
+  margin-right : 300px;
+  padding: 30px;
+  background-color: #d1d1e0; 
+}
+.signup h3{
+  text-align: center;
+}
+.login h3{
+  text-align: center;
+}
+.login .row .col-sm-3{
+  padding: 15px;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+#hdrClr{
+  background-color: #176166;
+}
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container{
+    padding-bottom: 15px;
+    padding-right: 0px;
+    margin: 15px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 668px) {
+  .container {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer{
+      position: fixed
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+.form-signin {
+  width: 430px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-group{
+    margin-right: 60px;
+    width:35%;
+    float: left;
+}
+textarea.form-control{
+    width:218%;
+}
+p{
+    font-size: 15px;
+    text-align: left;
+}
+.myGrid {
+    width: 1015px;
+    height: 380px;
+}
+.myGrid .ui-grid-header{
+  border-color: black;
+}
+.myGrid .ui-grid-cell{
+  border-color: #b3b3b3;
+}
+.myGrid .ui-grid-row:nth-child(even) .ui-grid-cell {
+background-color: #d1e0e0;
+}
+.myGrid .ui-grid-row:nth-child(odd) .ui-grid-cell {
+background-color: #eafafa;
+}
+.myGrid2 {
+    width: 100%;
+    height: 300px;
+}
+.myGrid2 .ui-grid-header{
+  border-color: black;
+}
+.myGrid2 .ui-grid-cell{
+  border-color: #b3b3b3;
+}
+.myGrid2 .ui-grid-row:nth-child(even) .ui-grid-cell {
+background-color: #d1e0e0;
+}
+.myGrid2 .ui-grid-row:nth-child(odd) .ui-grid-cell {
+background-color: #eafafa;
+}
+.form-control{
+    margin: 10px;
+}
+.container-fluid{
+  padding: 10px;
+  margin: 0;
+  background-color: #176166;
+  color: #d1e0e0;
+  position: relative;
+}
+
+.navbar-brand {
+    padding: 10px;
+    vertical-align:  left;
+}
+.jumbotron .catagoryinput{
+    display: inline-flex;   
+    
+}
+.jumbotron label{
+    text-align: left;
+}
+.ng-invalid.ng-dirty{
+  border-color: #FA787E; 
+}
+.input.ng-invalid{
+  border: 1px solid red; 
+}
+.select.ng-invalid{
+  border: 1px solid red; 
+}
+.ng-valid.ng-dirty{
+  border-color: #78FA89;
+}
+#modalContainer{
+  padding-right:15px;
+}
+#modalPanel{
+  width:100%;
+  margin:15px 0px 0 0;
+}
+#prodhstry{
+  width:568px;
+  margin: 10px 0px 0 0;
+}
+#prodhstry button{
+  margin:10px 0  0 180px;
+  width: 150px;
+  height: 40px;
+  background-color: #176166;
+  color: white;
+}
+#historyGrid{
+  width : 870px;
+  margin-top: 15px;
+  margin-right: 35px;
+}
+#historyGrid button{
+  margin:10px 0  0 320px;
+  width: 150px;
+  height: 40px;
+  background-color: #176166;
+  color: white;
+}
+.panel{
+    width: 1053px;
+}
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #176166;
+    color: white;
+
+}
+
+.panel-body{
+  background:#eeeedd;
+}
+.holdClass{
+    padding-top: 40px;
+}
+.row{
+    margin-top: 20px;
+}
+.grp{
+  background-color: #176166;
+}
+a.grp:visited{
+  background-color: #176166;
+}
+a.grp:hover{
+  background-color: #23527c;
+}
+
